@@ -1,7 +1,7 @@
 # Odoo
 
 [![Build Status](https://runbot.odoo.com/runbot/badge/flat/1/master.svg)](https://runbot.odoo.com/runbot)
-[![Documentation](https://img.shields.io/badge/master-docs-875A7B.svg?style=flat&colorA=8F8F8F)](https://www.odoo.com/documentation/17.0)
+[![Tech Doc](https://img.shields.io/badge/master-docs-875A7B.svg?style=flat&colorA=8F8F8F)](https://www.odoo.com/documentation/master)
 [![Help](https://img.shields.io/badge/master-help-875A7B.svg?style=flat&colorA=8F8F8F)](https://www.odoo.com/forum/help-1)
 [![Nightly Builds](https://img.shields.io/badge/master-nightly-875A7B.svg?style=flat&colorA=8F8F8F)](https://nightly.odoo.com/)
 
@@ -24,14 +24,55 @@ a full-featured [Open Source ERP](https://www.odoo.com) when you install several
 
 ## Getting started with Odoo
 
-For a standard installation please follow the [Setup instructions](https://www.odoo.com/documentation/17.0/administration/install/install.html)
+For a standard installation please follow the [Setup instructions](https://www.odoo.com/documentation/master/administration/install/install.html)
 from the documentation.
 
 To learn the software, we recommend the [Odoo eLearning](https://www.odoo.com/slides),
 or [Scale-up, the business game](https://www.odoo.com/page/scale-up-business-game).
-Developers can start with [the developer tutorials](https://www.odoo.com/documentation/17.0/developer/howtos.html).
+Developers can start with [the developer tutorials](https://www.odoo.com/documentation/master/developer/howtos.html).
 
 ## Security
 
 If you believe you have found a security issue, check our [Responsible Disclosure page](https://www.odoo.com/security-report)
 for details and get in touch with us via email.
+
+## Setup your development environment in codespace
+
+1. Update linux packages
+
+```bash
+sudo apt-get update
+sudo apt-get upgrade -y
+```
+
+2. Change to python 3.8
+
+```bash
+sudo apt install python3.8
+```
+
+3. (Optional) Install alternative libraries
+
+```bash
+sudo apt-get install -y libldap2-dev
+sudo apt-get install -y libsasl2-dev
+pip install python-ldap
+
+sudo apt-get install -y pngquant
+```
+
+4. Install python packages
+
+```bash
+pip install -r requirements.txt
+```
+
+5. Start Odoo
+
+```bash
+ ./odoo-bin -r odoo -w odoo --db_host localhost --database odoodb
+```
+
+6. Access Odoo
+   Open your browser and go to [http://localhost:8069](http://localhost:8069) to access the Odoo web interface.
+   admin@admin is the default username and password.
