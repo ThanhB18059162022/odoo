@@ -35,3 +35,44 @@ Developers can start with [the developer tutorials](https://www.odoo.com/documen
 
 If you believe you have found a security issue, check our [Responsible Disclosure page](https://www.odoo.com/security-report)
 for details and get in touch with us via email.
+
+## Setup your development environment in codespace
+
+1. Update linux packages
+
+```bash
+sudo apt-get update
+sudo apt-get upgrade -y
+```
+
+2. Change to python 3.8
+
+```bash
+sudo apt install python3.8
+```
+
+3. (Optional) Install alternative libraries
+
+```bash
+sudo apt-get install -y libldap2-dev
+sudo apt-get install -y libsasl2-dev
+pip install python-ldap
+
+sudo apt-get install -y pngquant
+```
+
+4. Install python packages
+
+```bash
+pip install -r requirements.txt
+```
+
+5. Start Odoo
+
+```bash
+ ./odoo-bin -r odoo -w odoo --db_host localhost --database odoodb
+```
+
+6. Access Odoo
+   Open your browser and go to [http://localhost:8069](http://localhost:8069) to access the Odoo web interface.
+   admin@admin is the default username and password.
