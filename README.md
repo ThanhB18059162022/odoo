@@ -70,7 +70,7 @@ pip install -r requirements.txt
 5. Start Odoo
 
 ```bash
- ./odoo-bin -r odoo -w odoo --db_host localhost --database odoodb
+ ./odoo-bin -r odoo -w odoo --db_host localhost --database odoo17
 ```
 
 6. Access Odoo
